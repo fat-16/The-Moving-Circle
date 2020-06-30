@@ -1,0 +1,76 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{display:flex;
+     justify-content:center;
+     min-height:100vh;
+     align-items:center;
+	 background:#6f0000;
+}
+.bold{
+	position:relative;
+	display:flex;
+	width:200px;
+	height:200px;
+	border:2px solid #6f0000;
+	border-radius:50%;
+	box-shadow:-5px -5px 5px rgba(255, 255, 255, 0.1),
+	           10px 10px 10px rgba(0, 0, 0, 0.4),
+			   inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+			   inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+   overflow:hidden;
+}
+.bold::before{
+	content:'';
+	background:#6f0000;
+	position:absolute;
+	top:25px;
+	right:25px;
+	left:25px;
+	bottom:25px;
+	z-index:40;
+	border-radius:50%;
+	box-shadow:inset-2px -2px 5px rgba(255, 255, 255, 0.1),
+	           inset 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.bold:hover{
+	z-index:0;
+}
+.bold span{
+	position:absolute;
+	width:100%;
+	height:100%;
+	border-radius:50%;
+	background:linear-gradient(#200122, #093028, );
+	/*filter: blur(20px);*/
+	animation: animate 1s linear infinite;
+	
+}
+@keyframes animate{
+	0%{
+		transform:rotate(0deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+
+.bold span:nth-child(2)
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+	border-radius:50%;
+	background:linear-gradient(#200122, #093028, #237A57);
+	filter: blur(20px);
+	animation: animate2 1s linear infinite;
+}
+@keyframes animate2{
+	0%{
+		transform:rotate(360deg);
+	}
+	100%{
+		transform:rotate(0deg);
+	}
+}
